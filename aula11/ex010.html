@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res"></div>
+    <script>
+
+        function calcular(){
+            /*O valor do primeiro input de "Velocidade do carro" vai ser pego pelo id na varial txtv abaixo ou seja o id q era txtvel agr virou txtv, fizemos também uma var para o resultado vindo da div com o id res, as variaveis estão =(recebendo) o que está a sua direita. com isso fazemos uma var geral para o resultado que nesse exemplo foi a var vel,que está recebendo o nmr da var txtv e o value do segundo input "verificar" que é o que joga pro script processar, com isso fazemos o resto da operação*/
+            var txtv = document.getElementById('txtvel')
+            var res = document.getElementById('res')
+            var vel = Number(txtv.value)
+                res.innerHTML = `<p>Sua velocidade atual é de <strong> ${vel}Km/h </strong> </p>`
+            if (vel > 80) {
+                res.innerHTML += `<p>Você está <strong>MULTADO</strong> por excesso de velocidade!</p>`
+            } else {
+                res.innerHTML += `<p>Você está dentro do limite de velocidade, <strong>PARABÉNS!</strong></p>`
+            }
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+        }
+    </script>
+</body>
+</html>

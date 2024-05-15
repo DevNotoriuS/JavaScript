@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAÍSES</title>
+</head>
+<body>
+    <h1>Sistema de Países</h1>
+    <p>Qual é o país em que você reside? <input type="text" name="npaís" id="npaís"> <input type="button" value="Verificar" onclick="nome()"></p>
+    <div id="res"></div>
+
+    <script>
+        function nome(){
+            var país = document.getElementById('npaís')
+            var res = document.getElementById('res')
+            var country = país.value
+            res.innerText = ` Seu país atual é:${country} `
+            if( country == 'Brasil'){
+                res.innerText += `Você é Brasileiro!`
+            } else {
+                res.innerText += `Você é Estrangeiro!`
+            }
+        }
+    </script>
+</body>
+</html>
